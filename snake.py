@@ -1,17 +1,39 @@
-import turtle
+import pygame
+import sys
 
+class MAIN:
+    def __init__(self, width:int, height:int):
+        self.screen_width = width
+        self.screen_height = height
+        self.reset_game()
+
+    def reset_game(self):
+        pygame.init()
+        screen = pygame.display.set_mode((self.screen_width, self.screen_height))
+        self.clock = pygame.time.Clock()
+        
+    def loop(self):
+        for event in pygame.event.get():
+            match event.type:
+                case pygame.QUIT:
+                    return False
+        self.clock.tick(60)
+        pygame.display.update()
+        return True
+
+
+    def end(self):
+        pygame.quit()
+ 
 def main():
-    s=turtle.Screen()
-    s.setup(800, 600)
-    s.bgcolor("black")
-    t = turtle.RawTurtle(s)
-    t.shape("square")
-    t.penup()
-    t.color("grey")
-    t.goto(0,0)
-    t.stamp()
-    
-    s.exitonclick()
+    game = MAIN(400, 400)
 
-if __name__=="__main__":
+    while True:
+        if not game.loop():
+            break
+
+    game.end()
+    sys.exit()
+
+if __name__ == '__main__':
     main()
