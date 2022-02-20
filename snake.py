@@ -7,9 +7,13 @@ def main():
     t = turtle.RawTurtle(s)
     t.shape("square")
     t.penup()
-    t.color("grey")
-    t.goto(0,0)
-    t.stamp()
+    t.color("lightgreen")
+    s.tracer(0)
+    snake=[[0, 0],[20, 0],[40, 0],[60, 0]]
+    for snake_pos in snake:
+        t.goto(*snake_pos)
+        t.stamp()
+
     
     s.exitonclick()
 
