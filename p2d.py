@@ -50,12 +50,12 @@ class P2D:
         return (self.pixel_x, self.pixel_y)
 
     @pixel.setter
-    def pixel(self, point:Tuple(int)):
+    def pixel(self, point):
         self.pixel_x = point[0]
         self.pixel_y = point[1]
 
     def __eq__(self, other):
         return (self.grid_x == other.grid_x) and (self.grid_y == other.grid_y)
     
-    def __add__(self, other:P2D):
+    def __add__(self, other):
         return P2D(self.grid_x + other.grid_x, self.grid_y + other.grid_y)
