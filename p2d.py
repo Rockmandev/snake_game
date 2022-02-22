@@ -25,7 +25,7 @@ class P2D:
         return (self.grid_x, self.grid_y)
 
     @grid.setter
-    def grid(self, pos:Tuple(int)):
+    def grid(self, pos):
         self.grid_x = pos[0]
         self.grid_y = pos[1]
 
