@@ -1,5 +1,15 @@
+from typing import Tuple
 import pygame
 import sys
+import random
+from p2d import P2D
+
+
+class FRUIT:
+    def __init__(self, max_x, max_y):
+        self.x = random.randint(0, max_x-1)
+        self.y = random.randint(0, max_y-1)
+        
 
 class MAIN:
     def __init__(self, width:int, height:int):
