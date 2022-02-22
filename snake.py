@@ -11,14 +11,29 @@ class MAIN:
         pygame.init()
         screen = pygame.display.set_mode((self.screen_width, self.screen_height))
         self.clock = pygame.time.Clock()
-        
+    
+    def _pressed_key_evaluator(self, key):
+        print(key)
+        match key:
+            case pygame.K_UP:
+                print("Up")
+            case pygame.K_DOWN:
+                print("Down")
+            case pygame.K_RIGHT:
+                print("Right")
+            case pygame.K_LEFT:
+                print("Left")
+
     def loop(self):
         for event in pygame.event.get():
             match event.type:
                 case pygame.QUIT:
                     return False
-        self.clock.tick(60)
+                case pygame.KEYDOWN:
+                    self._pressed_key_evaluator(event.key)
+                
         pygame.display.update()
+        self.clock.tick(60)
         return True
 
 
