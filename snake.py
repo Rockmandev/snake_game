@@ -6,9 +6,10 @@ from p2d import P2D
 
 
 class FRUIT:
-    def __init__(self, max_x, max_y):
-        self.x = random.randint(0, max_x-1)
-        self.y = random.randint(0, max_y-1)
+    def __init__(self, max_grid_x, max_grid_y):
+        self.pos = P2D(
+            random.randint(0, max_grid_x-1),
+            random.randint(0, max_grid_y-1))
         
 
 class MAIN:
