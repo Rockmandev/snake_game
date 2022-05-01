@@ -1,5 +1,4 @@
 from typing import Tuple
-from unicodedata import numeric
 
 class Grid_Point:
     def __init__(self, grid_x, grid_y, scale_factor=20):
